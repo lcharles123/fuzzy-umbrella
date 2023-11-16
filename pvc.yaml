@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: lecioalves
+  name: project2-pv-lecioalves
+  labels:
+    type: local
+spec:
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+  accessModes:
+    - ReadWriteMany
+#  persistentVolumeReclaimPolicy: Recycle
+#  hostPath:
+#    path: "/home/lecioalves/project2-pv"

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlist-recomender-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: playlist-recomender
+  template:
+    metadata:
+      labels:
+        app: playlist-recomender
+    spec:
+      containers:
+      - name: api-server
+        image: lcharles060/playlist-recomender-server:0.1
+        ports:
+        - containerPort: 32195
+      - name: ml-recomender
+        image: lcharles060/ml-service:0.1
