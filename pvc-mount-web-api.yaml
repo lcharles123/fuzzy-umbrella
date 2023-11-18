@@ -15,18 +15,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: playlist-recomender-web-api
+  name: playlist-recomender-web-api-volume
 spec:
   containers:
-  - name: ml-recomender
-    image: lcharles060/ml-recomender-service:0.1
-    # does not work with block devices
-#    volumeDevices:
-#      - name: pvc-block-device
-#        devicePath: /dev/xvdb
-    volumeMounts:
-    - name: shared-folder
-      mountPath: "/shared"
   - name: api-server
     image: lcharles060/web-api-service:0.1
     volumeMounts:
