@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: playlist-recomender-api
+  name: playlist-recomender-web-api
 spec:
   containers:
   - name: ml-recomender
