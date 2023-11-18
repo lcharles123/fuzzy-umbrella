@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lecioalves-network-service
+spec:
+  type: LoadBalancer
+  selector:
+  # name of container
+    service: playlist-recomender-api
+  ports:
+    - protocol: TCP
+      nodePort: 32195
+      port: 32195
+      targetPort: 32195
