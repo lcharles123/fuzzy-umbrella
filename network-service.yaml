@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   selector:
   # name of container
-    service: playlist-recomender-api
+    service: playlist-recomender-web-api
   ports:
     - protocol: TCP
       nodePort: 32195
