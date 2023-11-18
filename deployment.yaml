@@ -13,6 +13,7 @@ spec:
         app: playlist-recomender-api
     spec:
       containers:
+      #update 1
       - name: playlist-recomender-api
         image: lcharles060/web-api-service:0.1
         ports:
