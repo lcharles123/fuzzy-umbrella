@@ -1,21 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: playlist-recomender-deployment
+  name: playlist-recomender-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: playlist-recomender
+      app: playlist-recomender-api
   template:
     metadata:
       labels:
-        app: playlist-recomender
+        app: playlist-recomender-api
     spec:
       containers:
-      - name: api-server
-        image: lcharles060/playlist-recomender-server:0.1
+      - name: playlist-recomender-api
+        image: lcharles060/web-api-service:0.1
         ports:
         - containerPort: 32195
+        # use to debug, ignore cache on creating deployment
+        imagePullPolicy: Always
       - name: ml-recomender
-        image: lcharles060/ml-service:0.1
+        image: lcharles060/ml-recomender-service:0.1
+        # use to debug, ignore cache on creating deployment
+        imagePullPolicy: Always
