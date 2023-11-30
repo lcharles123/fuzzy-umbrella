@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: lecioalves-network-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
   # name of container
     service: playlist-recomender-web-api
